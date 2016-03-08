@@ -15,31 +15,35 @@
   </parent>
 
   <groupId>org.wildfly.swarm</groupId>
-  <artifactId>keycloak</artifactId>
+  <artifactId>keycloak-api</artifactId>
 
   <name>WildFly Swarm: Keycloak API</name>
   <description>WildFly Swarm: Keycloak API</description>
 
   <packaging>jar</packaging>
 
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.wildfly.swarm</groupId>
+        <artifactId>wildfly-swarm-fraction-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </build>
+
   <dependencies>
     <dependency>
       <groupId>org.wildfly.swarm</groupId>
-      <artifactId>container</artifactId>
+      <artifactId>spi-api</artifactId>
     </dependency>
     <dependency>
       <groupId>org.wildfly.swarm</groupId>
       <artifactId>keycloak-modules</artifactId>
     </dependency>
 
-    <!-- Dependent APIs -->
     <dependency>
       <groupId>org.wildfly.swarm</groupId>
-      <artifactId>undertow</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.wildfly.swarm</groupId>
-      <artifactId>security</artifactId>
+      <artifactId>undertow-api</artifactId>
     </dependency>
 
     <!-- Provided APIs -->
